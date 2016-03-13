@@ -1,0 +1,32 @@
+	/*光源列表*/
+	/*点光源*/
+	m_light = new PointLight[100];
+	int i = 0;/*计算光源个数*/
+	m_light[i].reset(Vector3(0.0f, 5.0f, 5.0f), Vector3(1.5, 1.5, 1.5));/*光源1*/
+	//m_light[++i].reset(Vector3(0,5.0f,-5.0f), Vector3(1,1,1));/*光源2*/
+	m_lig_num = i + 1;
+
+	/*场景中物体列表*/
+	m_obj = new Object*[100];
+	int j = 0;/*计算场景中物体个数*/
+
+	/*球*/
+	m_obj[j] = new Sphere(Vector3(4,1,-5),2.0f);/*球1，球心位置，半径*/
+	m_obj[j]->reset(Vector3(0.9f,0.9f,0.1f), 0.5f, 0.1f);/*颜色，镜面反射系数，环境反射系数*/
+	//m_obj[++j] = new Sphere(Vector3(-3,0,-5),2.0f);/*球2*/
+	//m_obj[j]->reset(Vector3(0.7f,0.7f,1.0f), 0.9f, 0.2f);
+	/*三角形*/ 
+	m_obj[++j] = new Triangle(Vector3(0, 0, 1), Vector3(-5, -5, -50), Vector3(5, -5, -50), Vector3(0, 5, -50));/*法向量朝上的三角形*/
+	m_obj[j]->reset(Vector3(0.0f, 1.0f, 0.0f), 0.4f, 0.2f);
+	//printf("颜色：%f\n", m_obj[j]->get_normal(Vector3(0.0f, 1.0f, 0.0f)).z);
+	//m_obj[++j] = new Triangle(Vector3(0, 1, 0), Vector3(125, -5, -70), Vector3(-125, -5, 0), Vector3(125, -5, 0));/*法向量朝上的三角形*/
+	//m_obj[j]->reset(Vector3(0.7f, 0.7f, 1.0f), 0.5f, 0.5f);
+	/*平板*/
+	m_obj[++j] = new Plane(Vector3(0,1,0),100.0f);/*法向量朝上的平板*/
+	m_obj[j]->reset(Vector3(0.5f, 0.8f, 0.5f), 0.4f, 0.2f);
+	//m_obj[++j] = new Plane(Vector3(1,0,0),100.0f);
+	//m_obj[j]->reset(Vector3(0.5f, 0.5f, 0.8f), 0.4f, 0.2f);
+
+	m_obj_num = j + 1;
+
+Error	2	error C3028: 'Tracer::screen_color' : only a variable or static data member can be used in a data-sharing clause	
