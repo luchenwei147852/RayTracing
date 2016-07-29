@@ -1,5 +1,6 @@
 # RayTracing 光线追踪器
 一个C++语言实现的光线追踪器，[南加利福尼亚大学CSCI 480的课程试验](http://run.usc.edu/cs480-s13/assignments/assign3/assign3.html)
+
 This is a project of a ray tracer that be able to handle opaque surfaces with lighting and shadows.
 ##The input type likes following:
     amb: 0.3 0.3 0.3
